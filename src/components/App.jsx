@@ -1,7 +1,13 @@
-import  Product  from "./Product";
+import Card from "./Card";
+import Product  from "./Product";
+import users from "../users.json"
 
-export default function App() {
+
+function App() {
+  // console.log('users', users)
   return (
+   
+    <>
     <div>
       <h1>Best selling</h1>
 
@@ -16,10 +22,26 @@ export default function App() {
         price={14.29}
       />
     </div>
+<div>
+  {users.map ((el)=>
+{
+  return <Card key={el.id} name={el.name} email={el.email} phone={el.phone} address={el.address} />
+}  
+)
+  } 
+</div>
+   
+    </>
   );
 }
 
 
+
+
+
+
+
+export default App
 
 
 
